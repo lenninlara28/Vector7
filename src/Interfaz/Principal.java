@@ -98,10 +98,20 @@ public class Principal extends javax.swing.JFrame {
 
         cmbManual.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbManual.setText("Llenar Manual A");
+        cmbManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbManualActionPerformed(evt);
+            }
+        });
         jPanel4.add(cmbManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         cmbAutomatico.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbAutomatico.setText("Llenar Automatico A");
+        cmbAutomatico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAutomaticoActionPerformed(evt);
+            }
+        });
         jPanel4.add(cmbAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         cmbMostrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -111,11 +121,11 @@ public class Principal extends javax.swing.JFrame {
                 cmbMostrarActionPerformed(evt);
             }
         });
-        jPanel4.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+        jPanel4.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         cmbBorrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbBorrar.setText("Borrar");
-        jPanel4.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+        jPanel4.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
 
         cmbOperacion.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Union", "Interseccion ", "Diferencia(A-B)", "Diferencia(B-A)" }));
@@ -123,10 +133,20 @@ public class Principal extends javax.swing.JFrame {
 
         cmbManual2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbManual2.setText("Llenar Manual B");
+        cmbManual2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbManual2ActionPerformed(evt);
+            }
+        });
         jPanel4.add(cmbManual2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
         cmbAutomatico2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbAutomatico2.setText("Llenar Automatico B");
+        cmbAutomatico2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAutomatico2ActionPerformed(evt);
+            }
+        });
         jPanel4.add(cmbAutomatico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 320, 260));
@@ -158,6 +178,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCrearActionPerformed
+       int longitud;
         if(txtLongitud.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(this,"Digite La Longitud","Error",JOptionPane.ERROR_MESSAGE);
             txtLongitud.requestFocusInWindow();
@@ -165,7 +186,12 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "La longitud no puede ser cero", "Error", JOptionPane.ERROR_MESSAGE);
             txtLongitud.requestFocusInWindow();
              txtLongitud.selectAll();}
-        
+        else{
+            longitud=Integer.parseInt(txtLongitud.getText().trim());
+            v=new double[longitud];
+            b=new double [longitud];
+            JOptionPane.showMessageDialog(this, "Vectores Creados Exitosamente");
+        }
     }//GEN-LAST:event_cmbCrearActionPerformed
 
     private void txtLongitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitudKeyTyped
@@ -188,6 +214,46 @@ public class Principal extends javax.swing.JFrame {
             } 
         }
     }//GEN-LAST:event_cmbMostrarActionPerformed
+
+    private void cmbManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbManualActionPerformed
+       double n;
+        for (int i=0;i<v.length;i++){
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el Elemento En La Posicion "+i));
+            v[i]=n;
+        }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbManualActionPerformed
+
+    private void cmbManual2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbManual2ActionPerformed
+        double n;
+        for (int i=0;i<b.length;i++){
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el Elemento En La Posicion "+i));
+            b[i]=n;
+        }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbManual2ActionPerformed
+
+    private void cmbAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAutomaticoActionPerformed
+       double n;
+        for (int i = 0; i < v.length; i++) {
+         n= (int) (Math.random()*50+1);
+            v[i]=n;}
+        for (int i = 0; i < v.length; i++) {
+                    txtResultado.append(v[i]+" \n ");
+                }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbAutomaticoActionPerformed
+
+    private void cmbAutomatico2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAutomatico2ActionPerformed
+        double n;
+        for (int i = 0; i < b.length; i++) {
+         n= (int) (Math.random()*50+1);
+            b[i]=n;}
+        for (int i = 0; i < b.length; i++) {
+                    txtResultado.append(b[i]+" \n ");
+                }
+        JOptionPane.showMessageDialog(this, "Vector Creado Exitosamente");
+    }//GEN-LAST:event_cmbAutomatico2ActionPerformed
 
     /**
      * @param args the command line arguments
