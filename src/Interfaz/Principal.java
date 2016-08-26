@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp 14
@@ -14,6 +16,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    double v[],b[];
     public Principal() {
         initComponents();
     }
@@ -71,6 +74,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("Longitud");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        txtLongitud.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLongitudKeyTyped(evt);
+            }
+        });
         jPanel3.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, -1));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 190, 80));
@@ -80,6 +89,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbCrear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbCrear.setText("Crear");
+        cmbCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCrearActionPerformed(evt);
+            }
+        });
         jPanel4.add(cmbCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
         cmbManual.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -92,6 +106,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmbMostrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cmbMostrar.setText("Mostrar");
+        cmbMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMostrarActionPerformed(evt);
+            }
+        });
         jPanel4.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         cmbBorrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -137,6 +156,38 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmbCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCrearActionPerformed
+        if(txtLongitud.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Digite La Longitud","Error",JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
+        }else if (Integer.parseInt(txtLongitud.getText().trim())==0) {
+            JOptionPane.showMessageDialog(this, "La longitud no puede ser cero", "Error", JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
+             txtLongitud.selectAll();}
+        
+    }//GEN-LAST:event_cmbCrearActionPerformed
+
+    private void txtLongitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitudKeyTyped
+        char c=evt.getKeyChar();
+         
+        if(!Character.isDigit(c)){
+            getToolkit().beep();
+            evt.consume();}
+    }//GEN-LAST:event_txtLongitudKeyTyped
+
+    private void cmbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMostrarActionPerformed
+        for (int i = 0; i < v.length; i++) {
+            if  (b[i]==0){
+            JOptionPane.showMessageDialog(this, "Llene El Vector B", "Error", JOptionPane.ERROR_MESSAGE);
+            break;
+            }
+            else if(v[i]==0){
+            JOptionPane.showMessageDialog(this, "Llene El Vector A", "Error", JOptionPane.ERROR_MESSAGE);
+            break;
+            } 
+        }
+    }//GEN-LAST:event_cmbMostrarActionPerformed
 
     /**
      * @param args the command line arguments
