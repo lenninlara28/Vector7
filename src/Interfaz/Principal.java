@@ -27,17 +27,112 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        txtLongitud = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        cmbCrear = new javax.swing.JButton();
+        cmbManual = new javax.swing.JButton();
+        cmbAutomatico = new javax.swing.JButton();
+        cmbMostrar = new javax.swing.JButton();
+        cmbBorrar = new javax.swing.JButton();
+        cmbOperacion = new javax.swing.JComboBox<>();
+        cmbManual2 = new javax.swing.JButton();
+        cmbAutomatico2 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtResultado = new javax.swing.JTextArea();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("Operaciones Con Vectores ");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Longitud"));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel2.setText("Longitud");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        jPanel3.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, -1));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 190, 80));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Opciones"));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cmbCrear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbCrear.setText("Crear");
+        jPanel4.add(cmbCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+
+        cmbManual.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbManual.setText("Llenar Manual A");
+        jPanel4.add(cmbManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        cmbAutomatico.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbAutomatico.setText("Llenar Automatico A");
+        jPanel4.add(cmbAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        cmbMostrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbMostrar.setText("Mostrar");
+        jPanel4.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+
+        cmbBorrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbBorrar.setText("Borrar");
+        jPanel4.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+
+        cmbOperacion.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Union", "Interseccion ", "Diferencia(A-B)", "Diferencia(B-A)" }));
+        jPanel4.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 130, -1));
+
+        cmbManual2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbManual2.setText("Llenar Manual B");
+        jPanel4.add(cmbManual2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+
+        cmbAutomatico2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmbAutomatico2.setText("Llenar Automatico B");
+        jPanel4.add(cmbAutomatico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 320, 260));
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtResultado.setEditable(false);
+        txtResultado.setColumns(20);
+        txtResultado.setRows(5);
+        jScrollPane1.setViewportView(txtResultado);
+
+        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 160, 240));
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 190, 280));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +174,23 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmbAutomatico;
+    private javax.swing.JButton cmbAutomatico2;
+    private javax.swing.JButton cmbBorrar;
+    private javax.swing.JButton cmbCrear;
+    private javax.swing.JButton cmbManual;
+    private javax.swing.JButton cmbManual2;
+    private javax.swing.JButton cmbMostrar;
+    private javax.swing.JComboBox<String> cmbOperacion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtLongitud;
+    private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }
